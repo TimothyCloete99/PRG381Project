@@ -58,12 +58,13 @@ public class Menu {
         
         System.out.println("Enter Client's name");
         String name =ClientInput.nextLine();
-
+        ClientClass ClientInfo = new ClientClass();
+        ClientInfo.
         System.out.println("Enter Client's Surname");
         String surname = ClientInput.nextLine();
 
         System.out.println("Enter Client's Telephone number");
-        int cellnumber = ClientInput.nextInt();
+        String cellnumber = ClientInput.nextLine();
 
     }
 

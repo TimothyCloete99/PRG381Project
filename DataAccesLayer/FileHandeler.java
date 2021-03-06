@@ -19,13 +19,25 @@ public class FileHandeler {
     private BookingList readingData;
     private BookingsCreated writingData;
     File tempfile = new File("bookings.txt");
+    File clientfile = new File("Clients.txt");
     private Scanner scan;
     int id = 1;
 
     public FileHandeler() {
         
     }
-
+    public void WriteClient(ClientClass clientC) throws FileNotFoundException{
+        String Client = clientC.getCname()+","+clientC.getCsurname()+","+clientC.getCnumber();
+        FileWriter myFileWriter = new FileWriter(clientfile,true);
+       try{
+        myFileWriter.write(Client + "\n");
+        myFileWriter.close();
+        System.out.println("Successfully wrote to the file.");
+      } catch (IOException e) {
+        System.out.println("An error occurred.");
+        e.printStackTrace();
+      }
+    }
     public void writeBooking(BookingsCreated booking) throws FileNotFoundException{  
         
         String line = booking.getClient().getCname() + "," + booking.getClient().getCsurname() + "," + booking.getClient().getCnumber() + "," + booking.getClientEvent().getVenueName() + "," + booking.getClientEvent().getEventDate().toString() + "," + booking.getClientEvent().getEventType() + "," + booking.getClientEvent().getVenueAddress() + "," + booking.getClientEvent().getVenueContact() + "," + booking.getClientEvent().AdultCount + "," + booking.getClientEvent().ChildCount + ",";
