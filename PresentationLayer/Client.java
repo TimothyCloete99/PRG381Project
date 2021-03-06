@@ -27,10 +27,14 @@ public class Client {
             String option = scan.nextLine();
             switch (Integer.parseInt(option)) {
                 case 0:
-                    
+                    System.out.print(clear);  
+                    System.out.flush();  
+                    menu.addClient();
                     break;
                 case 1:
-                    
+                System.out.print(clear);  
+                System.out.flush();  
+                menu.ViewClients();
                     break;
                 case 2:
                     
